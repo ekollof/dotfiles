@@ -1,2 +1,5 @@
 .config/nvim/plugged
 *.pyc
+__pycache__
+.idea/*
+.ropeproject/*
