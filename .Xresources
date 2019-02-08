@@ -1,0 +1,7 @@
+
+#include ".Xresources.d/base16"
+!#include ".Xresources.d/solarized"
+#include ".Xresources.d/urxvt"
+#include ".Xresources.d/xterm"
+#include ".Xresources.d/rofi"
+#include ".Xresources.d/dwm"
