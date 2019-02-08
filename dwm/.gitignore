@@ -1,0 +1,6 @@
+*.o
+dwm
+console/st
+slstatus/slstatus
+*.orig
+*.rej
