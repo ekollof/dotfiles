@@ -50,8 +50,9 @@ local editor       = os.getenv("EDITOR") or "vim"
 local gui_editor   = "vim"
 local browser      = "firefox"
 local guieditor    = "vim"
-local wallpapercmd = "~/.config/awesome/wallpaper.sh -b ~/.config/awesome/wallpapers/Cityscapes"
-local wallpapercmdwide = "~/.config/awesome/wallpaper.sh -w -b ~/.config/awesome/widescreen_wallpapers"
+local wallpapercmd = "~/.config/awesome/wallpaper.sh -b ~/Wallpapers/lukesmith/Cityscapes"
+local wallpapercmdwide = "~/.config/awesome/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers"
+
 
 if screen:count() > 1 then
 	widescreen = true

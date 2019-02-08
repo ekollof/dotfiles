@@ -64,7 +64,7 @@ mod = "mod4"
 hostname = socket.gethostname()
 homedir = os.getenv("HOME")
 wallpapercmd = "sh -c 'feh --randomize --bg-scale " + \
-    "{:s}/.config/qtile/wallpapers/Spacescapes/*'"
+    "~/Wallpapers/lukesmith/Spacescapes'"
 
 keys = [
     Key([mod], "Return", lazy.spawn("st")),
