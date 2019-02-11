@@ -1,3 +1,4 @@
+.cfg
 .config/nvim/plugged
 *.pyc
 *.o
@@ -5,4 +6,4 @@
 __pycache__
 .idea/*
 .ropeproject/*
-
+dwm
