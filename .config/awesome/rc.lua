@@ -50,8 +50,8 @@ local editor       = os.getenv("EDITOR") or "vim"
 local gui_editor   = "vim"
 local browser      = "firefox"
 local guieditor    = "vim"
-local wallpapercmd = "~/.config/awesome/wallpaper.sh -b ~/Wallpapers/lukesmith/Cityscapes"
-local wallpapercmdwide = "~/.config/awesome/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers"
+local wallpapercmd = "~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Cityscapes"
+local wallpapercmdwide = "~/bin/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers"
 
 
 if screen:count() > 1 then
