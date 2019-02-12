@@ -120,7 +120,7 @@ then
 fi
 
 if [ -v COLORTERM ]; then
-    wal -R -q
+    wal -n -R -q
 fi
 
 neofetch
