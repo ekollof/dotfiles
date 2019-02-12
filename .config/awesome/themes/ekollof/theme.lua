@@ -213,6 +213,9 @@ theme.mpd = lain.widget.mpd({
     end
 })
 
+-- Pewds subgap
+	local subgap_widget = awful.widget.watch('bash -c "python ~/bin/subgap.py"', 1)
+
 -- Volume
 	volume = lain.widget.alsa {
 		settings = function()
@@ -291,7 +294,7 @@ function theme.at_screen_connect(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 20, bg = theme.bg_normal .. 80, fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 20, bg = theme.bg_normal .. 90, fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -342,6 +345,7 @@ function theme.at_screen_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            subgap_widget,
             wibox.widget.systray(),
             s.mylayoutbox,
         },

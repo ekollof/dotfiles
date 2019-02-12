@@ -33,9 +33,11 @@ else
 endif
 
 Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete-clangx'
+Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'felixhummel/setcolors.vim'
 Plug 'morhetz/gruvbox'
-Plug 'Lokaltog/vim-monotone'
+!Plug 'Lokaltog/vim-monotone'
 call plug#end()
 
 
@@ -44,7 +46,6 @@ set mouse=a
 set nohlsearch
 set clipboard=unnamedplus
 set colorcolumn=80
-colorscheme monotone
 syntax on
 
 

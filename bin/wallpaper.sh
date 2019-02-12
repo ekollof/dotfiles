@@ -52,7 +52,7 @@ else
 fi
 
 # Set colors
-wal -n -i "$BG"  --saturate 1 -a "75"
+wal -n -i "$BG" -a "70" --saturate 1.0 --vte
 # Set widget colors
 oomox-cli /home/ekollof/.cache/wal/colors-oomox
 oomox-gnome-colors-icons-cli ~/.config/oomox/colors/wal
