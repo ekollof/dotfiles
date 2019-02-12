@@ -19,7 +19,10 @@ def main():
     pdp = int(getsubcount('UC-lHJZR3Gqxm24_Vd_AJ5Yw', key))
     tser = int(getsubcount('UCq-Fj5jknLsUf-MWSy4_brA', key))
     delta = pdp - tser
-    print("Pewds vs Tseries: " + str(delta))
+    if delta > 0:
+        print("Pewds vs Tseries: " + str(delta))
+    else:
+        print("The age of actual creators is over.")
 
 if __name__ == '__main__':
     sys.exit(main())
