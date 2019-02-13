@@ -37,7 +37,7 @@ Plug 'Shougo/deoplete-clangx'
 Plug 'deoplete-plugins/deoplete-zsh'
 Plug 'felixhummel/setcolors.vim'
 Plug 'morhetz/gruvbox'
-!Plug 'Lokaltog/vim-monotone'
+"Plug 'Lokaltog/vim-monotone'
 call plug#end()
 
 

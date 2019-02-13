@@ -48,7 +48,7 @@ BG="${WALLDIR}/$(ls -1 ${WALLDIR} | shuf -n 1)"
 if [ ${WIDESCREEN} == 1 ]; then
 	feh --bg-fill --no-xinerama --randomize "$BG"
 else
-	feh --bg-scale --randomize "$BG"
+	feh --bg-scale --randomize "$WALLDIR"
 fi
 
 # Set colors

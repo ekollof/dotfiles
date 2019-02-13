@@ -7,9 +7,7 @@ from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 
-from Xlib import X, display
-from Xlib.ext import randr
-from pprint import pprint
+from Xlib import display
 
 d = display.Display()
 s = d.screen()
@@ -63,11 +61,18 @@ DARK_ORANGE = "#582c00"
 mod = "mod4"
 hostname = socket.gethostname()
 homedir = os.getenv("HOME")
-wallpapercmd = "sh -c 'feh --randomize --bg-scale " + \
-    "~/Wallpapers/lukesmith/Spacescapes'"
+
+if num_screens == 1:
+    print("Use single screen wallpaper")
+    wallpapercmd = homedir + "/bin/wallpaper.sh -b " + homedir +\
+        "/Wallpapers/lukesmith/Spacescapes"
+else:
+    print("Use ultrawide wallpaper")
+    wallpapercmd = homedir + "/bin/wallpaper.sh -w -b " + homedir + \
+        "/Wallpapers/widescreen_wallpapers"
 
 keys = [
-    Key([mod], "Return", lazy.spawn("st")),
+    Key([mod], "Return", lazy.spawn("urxvt")),
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
 
@@ -82,7 +87,7 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
-    Key([mod, "shift"], "x", lazy.window.kill()),
+    Key([mod], "x", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
@@ -90,8 +95,8 @@ keys = [
 
     Key([mod], "p", lazy.spawn("rofi -show run")),
     Key([mod, "shift"], "p", lazy.spawn("rofi-pass")),
-    Key(["mod1", "control"], "l", lazy.spawn("slock")),
-    Key([mod, "shift"], "w", lazy.spawn(wallpapercmd.format(homedir))),
+    Key(["mod1", "control"], "l", lazy.spawn("xscreensaver-command -lock")),
+    Key(["mod1", "control"], "w", lazy.spawn(wallpapercmd.format(homedir))),
 
     # Window controls
     Key(
@@ -220,7 +225,6 @@ border_args = {
 }
 
 layouts = [
-    layout.Max(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.MonadWide(**layout_theme),
     layout.Bsp(**layout_theme),
@@ -239,14 +243,15 @@ layouts = [
         panel_width=320,
         **layout_theme
     ),
-    # layout.Stack(stacks=2, **layout_theme),
+    layout.Stack(stacks=2, **layout_theme),
     # layout.Columns(**layout_theme),
     # layout.RatioTile(**layout_theme),
     # layout.VerticalTile(**layout_theme),
-    # layout.Tile(shift_windows=True, **layout_theme),
+    layout.Tile(shift_windows=True, **layout_theme),
     # layout.Matrix(**layout_theme),
     # layout.Zoomy(**layout_theme),
     layout.Floating(**layout_theme),
+    layout.Max(**layout_theme),
 ]
 
 
