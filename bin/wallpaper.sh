@@ -13,6 +13,18 @@ Usage:
 EOF
 }
 
+reload_gtk() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  icons=$(gsettings get org.gnome.destkop.interface icon-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  gsettings set org.gnome.desktop.interface icon-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+  gsettings set org.gnome.desktop.interface icon-theme "$icons"
+}
+
+
+
 WIDESCREEN=0
 options=$(getopt -o "hwb:" -a -- "$@")
 eval set -- "$options"
@@ -52,7 +64,9 @@ else
 fi
 
 # Set colors
-wal --backend wal -n -i "$BG" -a "70" --saturate 1.0 --vte
+wal --backend wal -n -i "$BG" -a "60" --saturate 1.0 --vte
 # Set widget colors
 oomox-cli /home/ekollof/.cache/wal/colors-oomox
 oomox-gnome-colors-icons-cli ~/.config/oomox/colors/wal
+sleep 1
+reload_gtk

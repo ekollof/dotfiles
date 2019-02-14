@@ -104,6 +104,14 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias mutt=neomutt
 alias vim=nvim
 
+# misc functions
+function reload_gtk() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
+
 # Do these steps first:
 #
 # git init --bare $HOME/.cfg
