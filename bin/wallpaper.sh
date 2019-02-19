@@ -15,7 +15,7 @@ EOF
 
 reload_gtk() {
   theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
-  icons=$(gsettings get org.gnome.destkop.interface icon-theme)
+  icons=$(gsettings get org.gnome.desktop.interface icon-theme)
   gsettings set org.gnome.desktop.interface gtk-theme ''
   gsettings set org.gnome.desktop.interface icon-theme ''
   sleep 1
@@ -55,13 +55,15 @@ if [ -z "${WALLDIR}" ]; then
 fi
 
 
-BG="${WALLDIR}/$(ls -1 ${WALLDIR} | shuf -n 1)"
+BG="$(find ${WALLDIR} | shuf -n 1)"
 
 if [ ${WIDESCREEN} == 1 ]; then
-	feh --bg-fill --no-xinerama --randomize "$BG"
+	feh --bg-fill --no-xinerama "$BG"
 else
-	feh --bg-scale --randomize "$WALLDIR"
+	feh --bg-scale "$BG"
 fi
+
+echo $BG >> ~/.wallpaper
 
 # Set colors
 wal --backend wal -n -i "$BG" -a "60" --saturate 1.0 --vte

@@ -503,17 +503,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "v", function () awful.spawn("xsel -b | xsel") end,
               {description = "copy gtk to terminal", group = "hotkeys"}),
 
-    -- User programs
-    awful.key({ modkey }, "q", function () awful.spawn(browser) end,
-              {description = "run browser", group = "launcher"}),
-    awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
-              {description = "run gui editor", group = "launcher"}),
-
     -- Default
-    --{{{ Menubar
-    awful.key({ modkey }, "e", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
-    --}}}
+
     --[[ dmenu
     awful.key({ modkey }, "x", function ()
         awful.spawn(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
@@ -523,15 +514,19 @@ globalkeys = awful.util.table.join(
     --]]
 
     -- Rofi
-    awful.key({ modkey }, "p", function () awful.spawn("rofi -show run") end,
+    awful.key({ modkey }, "p", function () awful.spawn("rofi -show drun -modi drun") end,
               {description = "show rofi", group = "launcher"}
     ),
     -- Rofipass
     awful.key({ modkey, "Shift" }, "p", function () awful.spawn("rofi-pass") end,
               {description = "show rofi", group = "launcher"}
     ),
+    --{{{ Emoji
+    awful.key({ modkey }, "e", function() awesome.spawn("rofi -show emoji -modi emoji") end,
+              {description = "insert emoji", group = "launcher"}),
+    --}}}
 
-    -- slock
+    -- Lock screen
     awful.key({ "Control", altkey }, "l", function () awful.spawn(screenlockcmd) end,
               {description = "show rofi", group = "launcher"}
     ),
