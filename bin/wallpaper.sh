@@ -60,15 +60,15 @@ BG="$(find ${WALLDIR} | shuf -n 1)"
 if [ ${WIDESCREEN} == 1 ]; then
 	feh --bg-fill --no-xinerama "$BG"
 else
-	feh --bg-scale "$BG"
+	feh --bg-scale --randomize "$WALLDIR"
 fi
 
 echo $BG >> ~/.wallpaper
 
-# Set colors
-wal --backend wal -n -i "$BG" -a "60" --saturate 1.0 --vte
-# Set widget colors
-oomox-cli /home/ekollof/.cache/wal/colors-oomox
-oomox-gnome-colors-icons-cli ~/.config/oomox/colors/wal
-sleep 1
-reload_gtk
+## Set colors
+#wal --backend wal -n -i "$BG" -a "60" --saturate 1.0 --vte
+## Set widget colors
+#oomox-cli /home/ekollof/.cache/wal/colors-oomox
+#oomox-gnome-colors-icons-cli ~/.config/oomox/colors/wal
+#sleep 1
+#reload_gtk

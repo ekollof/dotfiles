@@ -7,6 +7,6 @@ xscreensaver -nosplash &
 
 (dex -a )
 
-wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers
+wallpaper.sh -b ~/Wallpapers/lukesmith/Future
 urxvtd -q -o -f
 dunst &

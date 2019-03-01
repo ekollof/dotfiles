@@ -62,14 +62,14 @@ mod = "mod4"
 hostname = socket.gethostname()
 homedir = os.getenv("HOME")
 
-if num_screens == 1:
-    print("Use single screen wallpaper")
-    wallpapercmd = homedir + "/bin/wallpaper.sh -b " + homedir +\
-        "/Wallpapers/lukesmith/Spacescapes"
-else:
-    print("Use ultrawide wallpaper")
-    wallpapercmd = homedir + "/bin/wallpaper.sh -w -b " + homedir + \
-        "/Wallpapers/widescreen_wallpapers"
+# if num_screens == 1:
+print("Use single screen wallpaper")
+wallpapercmd = homedir + "/bin/wallpaper.sh -b " + homedir +\
+    "/Wallpapers/lukesmith/Spacescapes"
+# else:
+#    print("Use ultrawide wallpaper")
+#    wallpapercmd = homedir + "/bin/wallpaper.sh -w -b " + homedir + \
+#        "/Wallpapers/widescreen_wallpapers"
 
 keys = [
     Key([mod], "Return", lazy.spawn("urxvt")),
@@ -248,7 +248,7 @@ layouts = [
     # layout.RatioTile(**layout_theme),
     # layout.VerticalTile(**layout_theme),
     layout.Tile(shift_windows=True, **layout_theme),
-    # layout.Matrix(**layout_theme),
+    layout.Matrix(**layout_theme),
     # layout.Zoomy(**layout_theme),
     layout.Floating(**layout_theme),
     layout.Max(**layout_theme),

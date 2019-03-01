@@ -1,14 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# Terminate already running bar instances
-killall -q polybar
+MONITOR_LIST=$(xrandr --listmonitors | sed '1 d' | awk 'NF>1{print $NF}')
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+killall polybar 2> /dev/null
 
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-        WIRELESS=$(ls /sys/class/net/ | grep ^wl | awk 'NR==1{print $1}') MONITOR=$m polybar --reload mainbar-i3 &
+for mon in $MONITOR_LIST; do
+    echo "Launching on monitor $mon"
+    env MONITOR=$mon polybar topbar &
 done
 
-echo "Bars launched..."
 

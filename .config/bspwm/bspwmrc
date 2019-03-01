@@ -1,8 +1,13 @@
 #! /bin/sh
 
-sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+MONITOR_LIST=$(xrandr --listmonitors | sed '1 d' | awk 'NF>1{print $NF}')
+
+i=1
+for monitor in $(bspc query -M); do
+    bspc monitor $monitor -d $monitor/1 $monitor/2 $monitor/3 $monitor/4 $monitor/5 $monitor/6 $monitor/7 $monitor/8 $monitor/9 $monitor/10
+    let i++
+done
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -19,18 +24,19 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a polybar state=sticky
 
+bspc config initial_polarity second_child
+
 # Autostart
+killall sxhkd
+sxhkd &
+
+killall compton
 compton --config ~/.config/compton/compton.conf &
 
-SCREENS=$(xrandr -d :0 -q | grep -c ' connected')
-if (( SCREENS > 1 )); then
-    ~/bin/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers
-else
-    ~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Titans
-fi
+~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Titans
 
 ~/.config/polybar/launch.sh
-dex -a
+dex -a -e bspwm
 
 
 

@@ -50,6 +50,12 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
+alt + {_,shift + }{1-9,0}
+    bspc {desktop -f, window -d} $(bspc query -M -m)/{a,b,c}
+
+alt + w
+    bspc monitor -f next
+
 #
 # focus/swap
 #
@@ -119,3 +125,32 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Multimedia keys
+XF86AudioMute
+  amixer -c 1 sset Master toggle
+
+XF86AudioLowerVolume
+  amixer -c 1 sset Master 3%-
+
+XF86AudioRaiseVolume
+  amixer -c 1 sset Master 3%+
+
+XF86AudioMicMute
+  sh -c "if amixer get Capture,0 | grep -q '\[on\]' ; then amixer -q set Capture,0 nocap ; else amixer -q set Capture,0 cap; fi"
+
+XF86MonBrightnessUp
+  xbacklight -inc 5%
+
+XF86MonBrightnessDown
+  xbacklight -dec 5%
+
+# XF86Display => F7
+# XF86WLAN => F8
+# XF86Tools => F9
+# XF86Search => F10
+# XF86LaunchA => F11
+# XF86Explorer => F12
+
+Print
+  scrot '%Y%m%d_$wx$h.png' -e 'mv $f ~/Pictures/screenshots/'
