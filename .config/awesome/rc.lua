@@ -38,9 +38,10 @@ local themes = {
     "vertex",          -- 10
     "psychedelic",     -- 11
     "ekollof",         -- 12
+    "ekollof2",         -- 13
 }
 
-local chosen_theme = themes[12]
+local chosen_theme = themes[13]
 local widescreen   = false
 local modkey       = "Mod4"
 local altkey       = "Mod1"
@@ -54,11 +55,7 @@ local wallpapercmd = "~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Cityscapes"
 local wallpapercmdwide = "~/bin/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers"
 
 
-if screen:count() > 1 then
-	widescreen = true
-else
-	widescreen = false
-end
+widescreen = false
 
 -- {{{ Error handling
 if awesome.startup_errors then
