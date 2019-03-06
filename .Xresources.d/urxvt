@@ -44,38 +44,40 @@ URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 URxvt*depth: 32
 
-! Zenburn color-scheme
-URxvt*background: [85]#1F1F1F
-URxvt*foreground: #DCDCCC
-URxvt*cursorColor: #DCDCCC
-URxvt*cursorColor2: #FFFFEF
-URxvt*colorUL: #8CD0D3
-URxvt*underlineColor: #F0DFAF
-URxvt*colorBD: #E0CF9F
-URxvt*colorIT: #656555
+! special
+URxvt.foreground:   #c5c8c6
+URxvt.background:   [65]#1d1f21
+URxvt.cursorColor:  #c5c8c6
 
-!! black dark/light
-URxvt*color0: #3F3F3F
-URxvt*color8: #5F5F5F
-!! red dark/light
-URxvt*color1: #BC8383
-URxvt*color9: #CC9393
-!! green dark/light
-URxvt*color2: #5F7F5F
-URxvt*color10: #7F9F7F
-!! yellow dark/light
-URxvt*color3: #E0CF9F
-URxvt*color11: #F0DFAF
-!! blue dark/light
-URxvt*color4: #7CB8BB
-URxvt*color12: #8CD0D3
-!! magenta dark/light
-URxvt*color5: #DC8CC3
-URxvt*color13: #DC8CC3
-!! cyan dark/light
-URxvt*color6: #93E0E3
-URxvt*color14: #93E0E3
-!! white dark/light
-URxvt*color7: #DCDCCC
-URxvt*color15: #FFFFFF
+! black
+URxvt.color0:       #282a2e
+URxvt.color8:       #373b41
+
+! red
+URxvt.color1:       #a54242
+URxvt.color9:       #cc6666
+
+! green
+URxvt.color2:       #8c9440
+URxvt.color10:      #b5bd68
+
+! yellow
+URxvt.color3:       #de935f
+URxvt.color11:      #f0c674
+
+! blue
+URxvt.color4:       #5f819d
+URxvt.color12:      #81a2be
+
+! magenta
+URxvt.color5:       #85678f
+URxvt.color13:      #b294bb
+
+! cyan
+URxvt.color6:       #5e8d87
+URxvt.color14:      #8abeb7
+
+! white
+URxvt.color7:       #707880
+URxvt.color15:      #c5c8c6
 
