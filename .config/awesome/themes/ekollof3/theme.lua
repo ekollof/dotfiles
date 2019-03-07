@@ -207,7 +207,6 @@ function ()
 end)))
 
 -- Battery
---[[
 local bat = lain.widget.bat({
     settings = function()
         bat_header = " Bat "
@@ -218,7 +217,6 @@ local bat = lain.widget.bat({
         widget:set_markup(markup.font(theme.font, markup(blue, bat_header) .. bat_p))
     end
 })
---]]
 
 --  fs
 theme.fs = lain.widget.fs({
@@ -344,7 +342,7 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
             --mail.widget,
-            --bat.widget,
+            bat.widget,
             spr_right,
             musicwidget,
             bar,
@@ -370,7 +368,7 @@ function theme.at_screen_connect(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            -- mylauncher,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
