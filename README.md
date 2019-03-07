@@ -12,6 +12,6 @@ Tools I use (that are most certainly referenced in the dotfiles):
     - pywal <https://github.com/dylanaraps/pywal> : Shell colors/wallpapers
     - oomox <https://github.com/themix-project/oomox> : Icon/gtk theming based on above
 - Shells: zsh
-- Wallpapers included (don't forget to check out git submodules)
+- Wallpapers included *(don't forget to check out git submodules)*
 
 Enjoy!
