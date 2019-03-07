@@ -340,7 +340,6 @@ function theme.at_screen_connect(s)
         nil, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
             --mail.widget,
             bat.widget,
             spr_right,
@@ -368,6 +367,7 @@ function theme.at_screen_connect(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
+            wibox.widget.systray(),
             -- mylauncher,
         },
         s.mytasklist, -- Middle widget
