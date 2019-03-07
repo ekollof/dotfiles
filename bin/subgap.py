@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+"""
+ SUBSCRIBE
+           TO
+              PEWDIEPIE
+"""
 
 import sys
 import urllib.request
@@ -20,9 +25,10 @@ def main():
     tser = int(getsubcount('UCq-Fj5jknLsUf-MWSy4_brA', key))
     delta = pdp - tser
     if delta > 0:
-        print("Pewds vs Tseries: " + str(delta))
+        print("PewDiePie subgap: " + str(delta))
     else:
         print("The age of actual creators is over.")
+
 
 if __name__ == '__main__':
     sys.exit(main())

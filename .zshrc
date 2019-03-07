@@ -129,9 +129,9 @@ then
 fi
 
 # urxvt transparency
-#if [ -v COLORTERM ]; then
-#    wal -n -R -q
-#fi
+if [ -v COLORTERM ]; then
+    wal -n -R -q
+fi
 
 neofetch
 

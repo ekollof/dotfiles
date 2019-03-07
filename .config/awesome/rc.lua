@@ -38,10 +38,11 @@ local themes = {
     "vertex",          -- 10
     "psychedelic",     -- 11
     "ekollof",         -- 12
-    "ekollof2",         -- 13
+    "ekollof2",        -- 13
+    "ekollof3",        -- 14
 }
 
-local chosen_theme = themes[12]
+local chosen_theme = themes[14]
 local widescreen   = false
 local modkey       = "Mod4"
 local altkey       = "Mod1"
@@ -55,7 +56,11 @@ local wallpapercmd = "~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Cityscapes"
 local wallpapercmdwide = "~/bin/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers"
 
 
-widescreen = false
+if screen:count() > 1 then
+	widescreen = true
+else
+	widescreen = false
+end
 
 -- {{{ Error handling
 if awesome.startup_errors then
@@ -117,8 +122,8 @@ awful.layout.layouts = {
     --lain.layout.cascade.tile,
     lain.layout.centerwork,
     --lain.layout.centerwork.horizontal,
-    lain.layout.termfair,
-    --lain.layout.termfair.center,
+    --lain.layout.termfair,
+    lain.layout.termfair.center,
     awful.layout.suit.floating,
 }
 awful.util.taglist_buttons = awful.util.table.join(

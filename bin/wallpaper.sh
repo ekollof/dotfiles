@@ -66,9 +66,9 @@ fi
 echo $BG >> ~/.wallpaper
 
 ## Set colors
-#wal --backend wal -n -i "$BG" -a "60" --saturate 1.0 --vte
+wal --backend wal -n -i "$BG" -a "60" --saturate 1.0 --vte
 ## Set widget colors
-#oomox-cli /home/ekollof/.cache/wal/colors-oomox
-#oomox-gnome-colors-icons-cli ~/.config/oomox/colors/wal
-#sleep 1
-#reload_gtk
+oomox-cli /home/ekollof/.cache/wal/colors-oomox
+oomox-gnome-colors-icons-cli ~/.config/oomox/colors/wal
+sleep 1
+reload_gtk
