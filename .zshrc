@@ -122,6 +122,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 export PATH="/home/ekollof/.local/bin:$PATH"
 
+# Gem
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
 # xterm transparency
 if [ -v XTERM_VERSION ]
 then

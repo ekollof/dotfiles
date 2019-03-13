@@ -42,7 +42,7 @@ local themes = {
     "ekollof3",        -- 14
 }
 
-local chosen_theme = themes[14]
+local chosen_theme = themes[12]
 local widescreen   = false
 local modkey       = "Mod4"
 local altkey       = "Mod1"
