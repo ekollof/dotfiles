@@ -13,5 +13,6 @@ Tools I use (that are most certainly referenced in the dotfiles):
     - oomox <https://github.com/themix-project/oomox> : Icon/gtk theming based on above
 - Shells: zsh
 - Wallpapers included *(don't forget to check out git submodules)*
+- Notification daemons: Dunst
 
 Enjoy!
