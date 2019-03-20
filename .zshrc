@@ -101,7 +101,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias mutt=neomutt
 alias vim=nvim
 
 # misc functions
@@ -110,6 +109,15 @@ function reload_gtk() {
   gsettings set org.gnome.desktop.interface gtk-theme ''
   sleep 1
   gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
+
+function mutt() {
+  old=$(stty -g)                               # Capture old termio params
+  stty dsusp undef                             # Disable DSUSP
+  trap "rc=$?; stty $old; exit $rc" 0 1 2 3 15 # Restore termios on interrupt
+  neomutt "$@"                     # Run mutt
+  stty $old                                    # Restore termios on exit
+
 }
 
 # Do these steps first:

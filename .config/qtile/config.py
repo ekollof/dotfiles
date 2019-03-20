@@ -14,6 +14,9 @@ s = d.screen()
 r = s.root
 res = r.xrandr_get_screen_resources()._data
 
+hostname = socket.gethostname()
+homedir = os.getenv("HOME")
+
 # Dynamic multiscreen! (Thanks XRandr)
 num_screens = 0
 for output in res['outputs']:
@@ -59,17 +62,15 @@ ORANGE = "#dd6600"
 DARK_ORANGE = "#582c00"
 
 mod = "mod4"
-hostname = socket.gethostname()
-homedir = os.getenv("HOME")
 
-# if num_screens == 1:
-print("Use single screen wallpaper")
-wallpapercmd = homedir + "/bin/wallpaper.sh -b " + homedir +\
-    "/Wallpapers/lukesmith/Spacescapes"
-# else:
-#    print("Use ultrawide wallpaper")
-#    wallpapercmd = homedir + "/bin/wallpaper.sh -w -b " + homedir + \
-#        "/Wallpapers/widescreen_wallpapers"
+if num_screens == 1:
+    print("Use single screen wallpaper")
+    wallpapercmd = homedir + "/bin/wallpaper.sh -b " + homedir +\
+        "/Wallpapers/lukesmith/Spacescapes"
+else:
+    print("Use ultrawide wallpaper")
+    wallpapercmd = homedir + "/bin/wallpaper.sh -w -b " + homedir + \
+        "/Wallpapers/widescreen_wallpapers"
 
 keys = [
     Key([mod], "Return", lazy.spawn("urxvt")),

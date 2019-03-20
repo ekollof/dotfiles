@@ -1,5 +1,5 @@
 [global]
-    font = Terminus (TTF) 18
+    font = Iosevka Term 18
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -9,7 +9,7 @@
     #
     # for a complete reference see http://developer.gnome.org/pango/stable/PangoMarkupFormat.html
     # If markup is not allowed, those tags will be stripped out of the message.
-    allow_markup = yes
+    markup = yes
 
     # The format of the message. Possible variables are:
     #   %a  appname
@@ -117,15 +117,14 @@
     # automatically after a crash.
     startup_notification = true
 
+    frame_width = 0
+    frame_color = "#000000"
+
     # dmenu path
     dmenu = /usr/local/bin/dmenu -p dunst:
 
     # browser for opening urls in context menu
     browser = /usr/local/bin/firefox -new-tab
-
-[frame]
-    width = 0
-    color = "#000000"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -134,7 +133,7 @@
     # xev might be helpful to find names for keys
 
     # close notification
-    close = mod1+m
+    close = mod1+x
 
     # close all notifications
     close_all = mod1+shift+m
@@ -156,7 +155,6 @@
     background = "#285577"
     foreground = "#ffffff"
     timeout = 10
-
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"

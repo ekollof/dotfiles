@@ -15,7 +15,12 @@ local awful         = require("awful")
                       require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
+
+-- HACK: Disable dbus integration in naughty so I can run Dunst
+local _dbus = dbus; dbus = nil
 local naughty       = require("naughty")
+dbus = _dbus
+
 local lain          = require("lain")
 local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
@@ -88,6 +93,7 @@ run_once.run("xrdb -I$HOME ~/.Xresources")
 run_once.run("compton --config ~/.config/compton/compton.conf &")
 run_once.run("dex -a -e i3")
 run_once.run("urxvtd -q -o -f")
+run_once.run("dunst &")
 
 if widescreen then
     run_once.run(wallpapercmdwide)
