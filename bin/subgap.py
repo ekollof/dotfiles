@@ -23,11 +23,13 @@ def main():
     key = 'AIzaSyBR7ZQmh02ETze1hjNS7rFYsSJSBYoUsvY'
     pdp = int(getsubcount('UC-lHJZR3Gqxm24_Vd_AJ5Yw', key))
     tser = int(getsubcount('UCq-Fj5jknLsUf-MWSy4_brA', key))
+
     delta = pdp - tser
+
     if delta > 0:
         print("PewDiePie subgap: " + str(delta))
     else:
-        print("The age of actual creators is over.")
+        print(f"The age of actual creators is over. ({delta})")
 
 
 if __name__ == '__main__':

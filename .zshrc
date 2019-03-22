@@ -101,6 +101,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias mutt=neomutt
 alias vim=nvim
 
 # misc functions
@@ -111,21 +112,16 @@ function reload_gtk() {
   gsettings set org.gnome.desktop.interface gtk-theme $theme
 }
 
-function mutt() {
-  old=$(stty -g)                               # Capture old termio params
-  stty dsusp undef                             # Disable DSUSP
-  trap "rc=$?; stty $old; exit $rc" 0 1 2 3 15 # Restore termios on interrupt
-  neomutt "$@"                     # Run mutt
-  stty $old                                    # Restore termios on exit
-
-}
-
 # Do these steps first:
 #
 # git init --bare $HOME/.cfg
 # alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # config config --local status.showUntrackedFiles no
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# KVM
+export VIRSH_DEFAULT_CONNECT_URI=qemu:///system
+export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 export PATH="/home/ekollof/.local/bin:$PATH"
@@ -136,7 +132,7 @@ PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # xterm transparency
 if [ -v XTERM_VERSION ]
 then
-    transset-df --id "$WINDOWID" 0.65 > /dev/null
+    transset-df --id "$WINDOWID" 0.85 > /dev/null
 fi
 
 # urxvt transparency
