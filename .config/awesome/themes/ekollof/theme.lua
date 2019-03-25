@@ -222,7 +222,7 @@ theme.mpd = lain.widget.mpd({
 })
 
 -- Pewds subgap
-	local subgap_widget = awful.widget.watch('bash -c "python ~/bin/subgap.py"', 1)
+	local subgap_widget = awful.widget.watch('bash -c "python ~/bin/subgap.py"', 10)
 
 -- Volume
 	volume = lain.widget.alsa {
