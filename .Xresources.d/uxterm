@@ -1,0 +1,24 @@
+! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+UXTerm*loginshell: true
+
+! I like a LOT of scrollback...
+UXTerm*savelines: 16384
+
+! double-click to select whole URLs :D
+UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! right hand side scrollbar...
+UXTerm*rightScrollBar: false
+UXTerm*ScrollBar: false
+
+! stop output to terminal from jumping down to bottom of scroll again
+UXTerm*scrollTtyOutput: false
+
+UXTerm.VT100.translations: #override \
+Ctrl <Key> j: smaller-vt-font() \n\
+Ctrl <Key> k: larger-vt-font() \n
+
+UXTerm*faceName: Iosevka Term
+UXTerm*faceSize: 14
+
+!UXTerm*selectToClipboard: true
