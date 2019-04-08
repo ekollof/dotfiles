@@ -1,3 +1,6 @@
 [submodule "Wallpapers/lukesmith"]
 	path = Wallpapers/lukesmith
-	url = https://github.com/LukeSmithxyz/wallpapers.git
+    url = https://github.com/LukeSmithxyz/wallpapers.git
+[submodule "Code/rust-dwm-status"]
+    path = "Code/rust-dwm-status"
+    url = git@github.com:ekollof/rust-dwm-status.git

@@ -9,14 +9,14 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Term:size=10" };
-static const char dmenufont[]       = "Iosevka Term:size=10";
+static const char *fonts[]          = { "OverpassMono Nerd Font:size=14" };
+static const char dmenufont[]       = "OverpassMono Nerd Font:size=14";
 
 /* new colors */
 static char normbgcolor[]       = "#222222";
 static char normfgcolor[]       = "#bbbbbb";
-static char normbordercolor[]   = "#444444";
-static char selbordercolor[]  = "#2b2b2b";
+static char normbordercolor[]   = "#4b4b4b";
+static char selbordercolor[]  = "#1b1b1b";
 static char selbgcolor[]      = "#2b2b2b";
 static char selfgcolor[]      = "#eeeeee";
 
@@ -65,17 +65,24 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m",
+                    dmenumon, "-fn",
+                    dmenufont, "-nb",
+                    normbgcolor, "-nf",
+                    normfgcolor, "-sb",
+                    selbgcolor, "-sf",
+                    selfgcolor,
+                    NULL };
 static const char *passmenu[]  = { "passmenu", NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-char *wallpaper[]  = { "~/bin/wallpaper.sh", "-b", "~/Wallpapers/lukesmith/Art", NULL };
+static const char *screensaver[]  = { "xscreensaver-command", "-lock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = passmenu } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ ShiftMask|ControlMask,        XK_w, spawn,               SHCMD("~/bin/wallpaper.sh -b ~/Wallpapers/widescreen_wallpapers") },
+	{ Mod1Mask|ControlMask,         XK_l,      spawn,          {.v = screensaver } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

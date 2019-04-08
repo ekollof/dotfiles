@@ -12,3 +12,7 @@ else
 fi
 
 dex -a -e dwm &
+
+xscreensaver -nosplash &
+
+~/.cargo/bin/rust-dwm-status &
