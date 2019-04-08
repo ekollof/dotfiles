@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -16,9 +16,9 @@ static const char dmenufont[]       = "Iosevka Term:size=10";
 static char normbgcolor[]       = "#222222";
 static char normfgcolor[]       = "#bbbbbb";
 static char normbordercolor[]   = "#444444";
-static char selbordercolor[]  = "#4b4b4b";
-static char selbgcolor[]      = "#4b4b4b";
-static char selfgcolor[]      = "#efefef";
+static char selbordercolor[]  = "#2b2b2b";
+static char selbgcolor[]      = "#2b2b2b";
+static char selfgcolor[]      = "#eeeeee";
 
 static char *colors[][3]      = {
 	/*               fg           bg           border   */
@@ -41,7 +41,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -66,8 +66,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *passmenu[] = { "passmenu", NULL };
+static const char *passmenu[]  = { "passmenu", NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
+char *wallpaper[]  = { "~/bin/wallpaper.sh", "-b", "~/Wallpapers/lukesmith/Art", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

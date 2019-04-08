@@ -8,7 +8,7 @@ if (( MONCOUNT > 1 ))
 then
     ~/bin/wallpaper.sh -w -b ~/Wallpapers/widescreen_wallpapers
 else
-    ~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Tech
+    ~/bin/wallpaper.sh -b ~/Wallpapers/lukesmith/Art
 fi
 
 dex -a -e dwm &
