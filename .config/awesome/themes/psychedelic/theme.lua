@@ -13,7 +13,7 @@ local wibox = require("wibox")
 local os    = { getenv = os.getenv, setlocale = os.setlocale }
 
 local theme                                     = {}
-theme.confdir                                   = os.getenv("HOME") .. 
+theme.confdir                                   = os.getenv("HOME") ..
 "/.config/awesome/themes/psychedelic"
 theme.wallpaper                                 = theme.confdir .. "/psychedelic-rocket.png"
 theme.font                                      = "DejaVu Sans Mono 11"
@@ -113,7 +113,7 @@ local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
     city_id = 5809844, -- placeholder (London)
     units = "imperial",
-    notification_preset = { font = "DejaVu Sans Mono 11", fg = 
+    notification_preset = { font = "DejaVu Sans Mono 11", fg =
 theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
     settings = function()

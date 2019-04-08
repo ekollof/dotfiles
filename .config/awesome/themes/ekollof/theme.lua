@@ -353,7 +353,6 @@ function theme.at_screen_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            subgap_widget,
             wibox.widget.systray(),
             s.mylayoutbox,
         },

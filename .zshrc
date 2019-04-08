@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/ekollof/.oh-my-zsh"
+  export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -124,7 +124,10 @@ export VIRSH_DEFAULT_CONNECT_URI=qemu:///system
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
-export PATH="/home/ekollof/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Gem
 PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
@@ -135,10 +138,7 @@ then
     transset-df --id "$WINDOWID" 0.85 > /dev/null
 fi
 
-# urxvt transparency
-if [ -v COLORTERM ]; then
-    wal -n -R -q
-fi
+wal -n -R -q
 
 neofetch
 
