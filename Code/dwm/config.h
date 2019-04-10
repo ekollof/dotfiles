@@ -9,8 +9,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "OverpassMono Nerd Font:size=14" };
-static const char dmenufont[]       = "OverpassMono Nerd Font:size=14";
+static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14" };
+static const char dmenufont[]       = "TerminessTTF Nerd Font:size=14";
 
 /* new colors */
 static char normbgcolor[]       = "#222222";
@@ -76,6 +76,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m",
 static const char *passmenu[]  = { "passmenu", NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *screensaver[]  = { "xscreensaver-command", "-lock", NULL };
+static const char *wallpaper[] = { "/bin/sh", "-c", "$HOME/bin/wallpaper.sh -w -b $HOME/Wallpapers/widescreen_wallpapers", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -83,6 +84,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = passmenu } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask|ControlMask,         XK_l,      spawn,          {.v = screensaver } },
+	{ Mod1Mask|ControlMask,         XK_w,      spawn,          {.v = wallpaper } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

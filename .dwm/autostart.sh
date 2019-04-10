@@ -15,4 +15,5 @@ dex -a -e dwm &
 
 xscreensaver -nosplash &
 
+killall rust-dwm-status
 ~/.cargo/bin/rust-dwm-status &
