@@ -54,8 +54,8 @@ def window_to_next_group(qtile):
         qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
 
-GREY = "#444444"
-DARK_GREY = "#333333"
+GREY = "#666666"
+DARK_GREY = "#222222"
 BLUE = "#007fcf"
 DARK_BLUE = "#005083"
 ORANGE = "#dd6600"
@@ -234,14 +234,14 @@ layouts = [
         fontsize=10,
         sections=["FIRST", "SECOND"],
         section_fontsize=11,
-        bg_color="141414",
-        active_bg="90C435",
-        active_fg="000000",
-        inactive_bg="384323",
+        bg_color="222222",
+        active_bg="666666",
+        active_fg="ebebeb",
+        inactive_bg="222222",
         inactive_fg="a0a0a0",
         padding_y=5,
         section_top=10,
-        panel_width=320,
+        panel_width=160,
         **layout_theme
     ),
     layout.Stack(stacks=2, **layout_theme),
@@ -260,7 +260,7 @@ widget_defaults = dict(
     font='Iosevka Term',
     fontsize=14,
     padding=0,
-    background=BLUE
+    background=GREY
 )
 extension_defaults = widget_defaults.copy()
 
@@ -271,44 +271,44 @@ for screen in range(0, num_screens):
         Screen(
             top=bar.Bar(
                 [
-                    widget.Prompt(prompt=prompt, background=BLUE),
+                    widget.Prompt(prompt=prompt, background=GREY),
                     widget.TextBox(text=" ", fontsize=45, padding=-8,
-                                   foreground=DARK_BLUE, background=BLUE),
-                    widget.CurrentLayoutIcon(background=BLUE),
+                                   foreground=DARK_GREY, background=GREY),
+                    widget.CurrentLayoutIcon(background=GREY),
                     widget.TextBox(text=" ", fontsize=45, padding=-8,
-                                   foreground=BLUE, background=DARK_BLUE),
-                    widget.GroupBox(urgent_border=DARK_BLUE,
+                                   foreground=GREY, background=DARK_GREY),
+                    widget.GroupBox(urgent_border=DARK_GREY,
                                     disable_drag=True,
                                     highlight_method="block",
-                                    this_screen_border=DARK_BLUE,
+                                    this_screen_border=DARK_GREY,
                                     other_screen_border=DARK_ORANGE,
-                                    this_current_screen_border=BLUE,
+                                    this_current_screen_border=GREY,
                                     other_current_screen_border=ORANGE,
-                                    background=DARK_BLUE,
+                                    background=DARK_GREY,
                                     ),
                     widget.TextBox(text=" ", fontsize=45, padding=-8,
-                                   foreground=DARK_BLUE,
-                                   background=BLUE),
+                                   foreground=DARK_GREY,
+                                   background=GREY),
                     widget.TaskList(
                         markup=True,
-                        markup_focused='<span background="#005083"' +
-                                       ' foreground="#aaffaa">{}</span>',
-                        background=BLUE,
-                        border=DARK_BLUE,
-                        urgent_border=DARK_BLUE,
+                        markup_focused='[ <span background="#666666"' +
+                                       ' foreground="#aaffaa">{}</span> ]',
+                        background=GREY,
+                        border=GREY,
+                        urgent_border=DARK_GREY,
                     ),
                     widget.TextBox(text=" ", fontsize=45, padding=-8,
-                                   foreground=DARK_BLUE, background=BLUE),
-                    widget.Systray(background=DARK_BLUE),
+                                   foreground=DARK_GREY, background=GREY),
+                    widget.Systray(background=DARK_GREY),
                     widget.TextBox(text=" ", fontsize=45, padding=-8,
-                                   foreground=BLUE, background=DARK_BLUE),
-                    widget.TextBox(text=" ⌚", foreground=BLUE, fontsize=18,
-                                   background=BLUE),
+                                   foreground=GREY, background=DARK_GREY),
+                    widget.TextBox(text=" ⌚", foreground=GREY, fontsize=18,
+                                   background=GREY),
                     widget.Clock(format='%Y-%m-%d %a %H:%M:%S',
-                                 background=BLUE),
+                                 background=GREY),
                     widget.TextBox(text=" ", fontsize=45, padding=-8,
-                                   foreground=DARK_BLUE, background=BLUE),
-                    widget.CurrentLayout(background=DARK_BLUE),
+                                   foreground=DARK_GREY, background=GREY),
+                    widget.CurrentLayout(background=DARK_GREY),
                 ],
                 21,
             ),
