@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 usage() {
 	cat << EOF
@@ -26,7 +26,7 @@ reload_gtk() {
 
 
 WIDESCREEN=0
-options=$(getopt -o "hwb:" -a -- "$@")
+options=$(getopt "hwb:" $*)
 eval set -- "$options"
 
 while true; do
@@ -36,8 +36,8 @@ while true; do
 			exit 0
 			;;
 		-b)
-			shift
-			WALLDIR="$1"
+			WALLDIR="$2"
+            shift; shift
 			;;
 		-w)
 			WIDESCREEN=1
@@ -46,7 +46,6 @@ while true; do
 			shift
 			break;;
 	esac
-	shift
 done
 
 if [ -z "${WALLDIR}" ]; then

@@ -117,7 +117,7 @@ function reload_gtk() {
 # git init --bare $HOME/.cfg
 # alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # config config --local status.showUntrackedFiles no
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # KVM
 export VIRSH_DEFAULT_CONNECT_URI=qemu:///system
