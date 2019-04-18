@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "htile.c"
+#include "gaplessgrid.c"
+
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -9,8 +12,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14" };
-static const char dmenufont[]       = "TerminessTTF Nerd Font:size=14";
+static const char *fonts[]          = { "ShureTechMono Nerd Font Mono:size=14" };
+static const char dmenufont[]       = "ShureTechMono Nerd Font Mono:size=14";
 
 /* new colors */
 static char normbgcolor[]       = "#222222";
@@ -48,8 +51,10 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+    { "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+    { "==|",      htile },
+    { "|||",      gaplessgrid},
 };
 
 /* key definitions */
@@ -85,7 +90,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask|ControlMask,         XK_l,      spawn,          {.v = screensaver } },
 	{ Mod1Mask|ControlMask,         XK_w,      spawn,          {.v = wallpaper } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -98,6 +103,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_b,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

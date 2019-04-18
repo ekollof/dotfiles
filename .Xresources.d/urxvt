@@ -10,7 +10,8 @@ URxvt*imLocale: en_US.UTF-8
 URxvt*termName: xterm-256color
 Urxvt*buffered: true
 URxvt.intensityStyles: true
-URxvt.font: xft:Iosevka Term:size=14, \
+URxvt.font: xft:ShureTechMono Nerd Font Mono:size=14, \
+            xft:Iosevka Term:size=14, \
             xft:TerminessTTF Nerd Font:size=13, \
             xft:Terminus (TTF):size=12, \
             xft:UbuntuMono Nerd Font:size=13, \
