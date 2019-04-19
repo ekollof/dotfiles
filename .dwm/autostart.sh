@@ -13,6 +13,8 @@ fi
 
 dex -a -e dwm &
 
+xrdb ~/.Xresources
+
 xscreensaver -nosplash &
 
 killall rust-dwm-status

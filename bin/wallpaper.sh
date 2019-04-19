@@ -25,30 +25,27 @@ reload_gtk() {
 
 
 WIDESCREEN=0
-options=$(getopt -o "hwb:" -a -- "$@")
-eval set -- "$options"
-
-while true; do
-	case $1 in
-		-h)
+while getopts ":hwb:" opt; do
+	case $opt in
+		h)
 			usage
 			exit 0
 			;;
-		-b)
-			shift
-			WALLDIR="$1"
+		b)
+            echo "Using ${OPTARG}"
+			WALLDIR=$OPTARG
 			;;
-		-w)
+		w)
 			WIDESCREEN=1
 			;;
-		--)
-			shift
-			break;;
+        :)
+            usage
+            ;;
 	esac
-	shift
 done
 
 if [ -z "${WALLDIR}" ]; then
+    echo "Can't find wallpaper."
 	usage
 	exit 1
 fi
