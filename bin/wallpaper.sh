@@ -24,9 +24,8 @@ reload_gtk() {
 }
 
 
-
 WIDESCREEN=0
-options=$(getopt "hwb:" $*)
+options=$(getopt -o "hwb:" -a -- "$@")
 eval set -- "$options"
 
 while true; do
@@ -36,8 +35,8 @@ while true; do
 			exit 0
 			;;
 		-b)
-			WALLDIR="$2"
-            shift; shift
+			shift
+			WALLDIR="$1"
 			;;
 		-w)
 			WIDESCREEN=1
@@ -46,6 +45,7 @@ while true; do
 			shift
 			break;;
 	esac
+	shift
 done
 
 if [ -z "${WALLDIR}" ]; then
