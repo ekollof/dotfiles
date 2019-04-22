@@ -49,7 +49,7 @@ set colorcolumn=80
 syntax on
 
 " Set this when using FreeBSD
-let g:python3_host_prog='/usr/local/bin/python3.6'
+"let g:python3_host_prog='/usr/local/bin/python3.6'
 
 
 " Looks

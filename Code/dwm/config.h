@@ -3,6 +3,16 @@
 #include "htile.c"
 #include "gaplessgrid.c"
 
+/* mbp-mappings */
+#define XF86AudioMute           0x1008ff12
+#define XF86AudioLowerVolume    0x1008ff11
+#define XF86AudioRaiseVolume    0x1008ff13
+#define XF86TouchpadToggle      0x1008ffa9
+#define XF86MonBrightnessUp 0x1008ff02
+#define XF86MonBrightnessDown   0x1008ff03
+#define XF86KbdBrightnessUp 0x1008ff05
+#define XF86KbdBrightnessDown 0x1008ff06
+
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -82,6 +92,14 @@ static const char *passmenu[]  = { "passmenu", NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *screensaver[]  = { "xscreensaver-command", "-lock", NULL };
 static const char *wallpaper[] = { "/bin/sh", "-c", "$HOME/bin/wallpaper.sh -w -b $HOME/Wallpapers/widescreen_wallpapers", NULL};
+static const char *volup[]          = { "pulseaudio-ctl", "up", NULL };
+static const char *voldown[]        = { "pulseaudio-ctl", "down", NULL };
+static const char *voltoggle[] = { "pulseaudio-ctl", "mute", NULL };
+static const char *monbrightup[]    = { "light", "-A", "10", NULL };
+static const char *monbrightdown[]  = { "light", "-U", "10", NULL };
+static const char *kbdbrightup[]    = { "light", "-k", "-A", "10", NULL };
+static const char *kbdbrightdown[]  = { "light", "-k", "-U", "10", NULL };
+static const char *kbdbrightoff[] = { "light", "-k", "-S", "0", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -123,6 +141,14 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+    { 0,                            XF86AudioRaiseVolume,       spawn,              {.v = volup } },
+    { 0,                            XF86AudioLowerVolume,       spawn,              {.v = voldown } },
+    { 0,                            XF86AudioMute,              spawn,              {.v = voltoggle } },
+    { 0,                            XF86MonBrightnessUp,        spawn,              {.v = monbrightup } },
+    { 0,                            XF86MonBrightnessDown,      spawn,              {.v = monbrightdown } },
+    { 0,                            XF86KbdBrightnessUp,        spawn,              {.v = kbdbrightup } },
+    { 0,                            XF86KbdBrightnessDown,      spawn,              {.v = kbdbrightdown } },
+    { ShiftMask, XF86KbdBrightnessDown, spawn, {.v = kbdbrightoff } },
 };
 
 /* button definitions */
