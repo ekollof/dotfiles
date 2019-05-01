@@ -51,7 +51,7 @@ super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
 alt + {_,shift + }{1-9,0}
-    bspc {desktop -f, window -d} $(bspc query -M -m)/{a,b,c}
+    bspc {desktop -f, window -d} $(bspc query -M -m)/{1..10}
 
 alt + w
     bspc monitor -f next

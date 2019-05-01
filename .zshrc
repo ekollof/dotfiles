@@ -140,5 +140,5 @@ fi
 
 wal -n -R -q
 
-neofetch
+neofetch | lolcat
 
