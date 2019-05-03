@@ -138,7 +138,9 @@ then
     transset-df --id "$WINDOWID" 0.85 > /dev/null
 fi
 
-wal -n -R -q
+#if [ $TERM != "st" ]; then
+#    wal -n -R -q
+#fi
 
 neofetch | lolcat
 

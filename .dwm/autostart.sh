@@ -19,3 +19,5 @@ xscreensaver -nosplash &
 
 killall rust-dwm-status
 ~/.cargo/bin/rust-dwm-status &
+
+dunst &

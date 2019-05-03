@@ -89,7 +89,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m",
                     selfgcolor,
                     NULL };
 static const char *passmenu[]  = { "passmenu", NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *screensaver[]  = { "xscreensaver-command", "-lock", NULL };
 static const char *wallpaper[] = { "/bin/sh", "-c", "$HOME/bin/wallpaper.sh -w -b $HOME/Wallpapers/widescreen_wallpapers", NULL};
 static const char *volup[]          = { "pulseaudio-ctl", "up", NULL };

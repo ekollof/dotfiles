@@ -4,3 +4,6 @@
 [submodule "Code/rust-dwm-status"]
 	path = Code/rust-dwm-status
 	url = git@github.com:ekollof/rust-dwm-status.git
+[submodule "Code/luke-st"]
+	path = Code/luke-st
+	url = https://github.com/LukeSmithxyz/st.git
